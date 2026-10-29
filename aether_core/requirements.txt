@@ -1,0 +1,36 @@
+# AetherVane Aether Core Engine — Python Dependencies
+# =======================================================
+# These are the Python packages the Django backend needs to run.
+# Each one has a specific job, explained below.
+#
+# HOW TO INSTALL:
+# Open a terminal in this folder and run:
+#   pip install -r requirements.txt
+#
+# WHAT EACH PACKAGE DOES (plain language):
+# - Django: The main web framework. Think of it as a factory that builds
+#   websites and APIs. It handles routing (URLs), database connections,
+#   security, and more — so you don't have to write all that from scratch.
+# - djangorestframework: A toolkit that adds REST API superpowers to Django.
+#   REST API = a way for computers to talk to each other over HTTP,
+#   using standard "verbs" like GET (read) and POST (create).
+# - djangorestframework-simplejwt: Adds JWT (JSON Web Token) authentication.
+#   JWT = a digital "ID card" that proves who you are. After you log in,
+#   the server gives you a token, and you show it with every request.
+# - django-cors-headers: Allows the Vue.js frontend (running on a different
+#   port) to talk to the Django backend. Without this, the browser blocks
+#   the requests for security reasons (called "CORS" — Cross-Origin Resource Sharing).
+# - mysqlclient: The bridge between Django and MySQL database.
+# - python-decouple: Lets us store secrets (like database passwords) in a
+#   separate .env file instead of hardcoding them in the code.
+# - celery: Runs background tasks (like the DSL engine evaluation) without
+#   blocking the main web server. Think of it as a "second worker" doing
+#   heavy lifting while the first worker handles visitors.
+
+Django==4.2.16
+djangorestframework==3.15.2
+djangorestframework-simplejwt==5.3.1
+django-cors-headers==4.5.0
+mysqlclient==2.2.4
+python-decouple==3.8
+celery==5.4.0

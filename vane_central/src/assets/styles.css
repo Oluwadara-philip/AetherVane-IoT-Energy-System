@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: #0A0E27;
+    --foreground: #E2E8F0;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0A0E27 0%, #141B3D 50%, #0F1335 100%);
+    background-attachment: fixed;
+    color: #E2E8F0;
+    font-family: 'Source Sans Pro', sans-serif;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass panel - the core visual element of the dashboard */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+  }
+
+  .glass-panel-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glass-panel-hover:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(0, 212, 255, 0.30);
+    transform: translateY(-2px);
+  }
+
+  /* Glowing text effect for live data values */
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+
+  /* Custom scrollbar for alert feeds */
+  .custom-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.2);
+    border-radius: 3px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 212, 255, 0.4);
+  }
+
+  /* Animated gradient border for active elements */
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(10, 132, 255, 0.15));
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  /* Toggle switch for relay controls */
+  .toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .toggle-switch.on {
+    background: rgba(0, 230, 118, 0.3);
+  }
+
+  .toggle-switch.cut {
+    background: rgba(255, 61, 113, 0.3);
+  }
+
+  .toggle-knob {
+    position: absolute;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .toggle-switch.on .toggle-knob {
+    left: 27px;
+    background: #00E676;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+  }
+
+  .toggle-switch.off .toggle-knob {
+    left: 3px;
+    background: #A0AEC0;
+  }
+
+  .toggle-switch.cut .toggle-knob {
+    left: 3px;
+    background: #FF3D71;
+    box-shadow: 0 0 10px rgba(255, 61, 113, 0.5);
+  }
+}
